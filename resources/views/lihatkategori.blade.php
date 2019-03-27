@@ -7,39 +7,33 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="{{ asset('css/bootstrap.min.css')}}" rel="stylesheet">
-        <title>Lihat Data</title>
+        <title>Lihat Kategori</title>
     </head>
     <body>
         <div class="container">
             <div class="card mt-5">
                 <div class="card-header text-center">
-                    Data Berita
+                    Data Kategori
                 </div>
                 <div class="card-body">
                     <a href="/dashboard" class="btn btn-secondary">kembali</a>
-                    <a href="/tampil/baru" class="btn btn-primary">Masukkan Berita Baru</a>
+                    <a href="/tampilkategori/baru" class="btn btn-primary">Masukkan Kategori Baru</a>
                     <br/>
                     <br/>
                     <table class="table table-bordered table-hover table-striped">
                         <thead>
                             <tr>
-                                <th>Judul</th>
-                                <th>Tanggal</th>
-                                <th>Penulis</th>
-                                <th>Isi</th>
+                                <th>Nama Kategori</th>
                                 <th width='15%'>OPSI</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($berita as $b)
+                            @foreach($kategori as $k)
                             <tr>
-                                <td>{{ $b->judul_berita }}</td>
-                                <td>{{ $b->tanggal_berita }}</td>
-                                <td>{{ $b->penulis_berita }}</td>
-                                <td>{{ $b->isi_berita }}</td>
+                                <td>{{ $k->nama_kategori }}</td>
                                 <td>
-                                    <a href="/tampil/edit/{{ $b->id_berita }}" class="btn btn-warning">Edit</a>
-                                    <a href="/tampil/hapus/{{ $b->id_berita }}"  class="btn btn-danger">Hapus</a>
+                                    <a href="/tampilkategori/edit/{{ $k->id_kategori }}" class="btn btn-warning">Edit</a>
+                                    <a href="/tampilkategori/hapus/{{ $k->id_kategori }}"  class="btn btn-danger">Hapus</a>
                                 </td>
                             </tr>
                             @endforeach
